@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="yawp — loops that drift into music" data-ja="yawp — ずれていくループが音楽になる">yawp — loops that drift into music</title>
+<meta name="description" content="Draw a hill and the notes follow. yawp is an iPhone instrument of loops that drift into minimal techno and ambient.">
+<meta property="og:title" content="yawp — loops that drift into music">
+<meta property="og:description" content="Draw a hill. The notes follow.">
+<meta property="og:image" content="https://yawp.stems-jp.com/lp/og.jpg">
+<meta property="og:url" content="https://yawp.stems-jp.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#e8e3da">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lp.css">
+<script src="lang.js"></script>
+<script src="lp.js" defer></script>
+</head>
+<body>
+<header class="bar">
+  <a class="bar-name" href="./">yawp</a>
+  <div class="bar-right">
+    <span class="bar-soon"><span class="t-en">Coming soon</span><span class="t-ja">まもなく公開</span></span>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en">EN</button><button type="button" data-l="ja">日本語</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <h1 class="headline">
+        <span class="t-en">Draw a hill.<br><span class="b">The notes follow.</span></span>
+        <span class="t-ja">丘を描く。<br><span class="b">音がついてくる。</span></span>
+      </h1>
+      <p class="print promise"><span class="t-en">free to start · no ads · no data collected</span><span class="t-ja">無料ではじめられる · 広告なし · データを集めない</span></p>
+      <p class="intro">
+        <span class="t-en">yawp is an instrument for people who think they can’t make music. Draw a hill over a loop and the notes follow. Let loops of different lengths drift, and minimal techno and ambient happen.</span>
+        <span class="t-ja">yawp は、音楽をつくるのが苦手だと思っている人のための楽器です。ループの上に丘を描けば、音がついてくる。長さの違うループをずらしていけば、ミニマルテクノやアンビエントが生まれます。</span>
+      </p>
+      <p class="print status"><span class="t-en">Coming soon to the App Store · iPhone</span><span class="t-ja">App Store で まもなく公開 · iPhone</span></p>
+    </div>
+    <figure class="film">
+      <div class="device"><video id="film" src="lp/film.mp4" poster="lp/hero.jpg" autoplay muted loop playsinline preload="metadata" aria-label="yawp playing: hills drawn over loops, notes sown along them"></video></div>
+      <button class="snd print" id="snd" type="button" aria-pressed="false"><span class="snd-off"><span class="t-en">sound on</span><span class="t-ja">音を出す</span></span><span class="snd-on"><span class="t-en">sound off</span><span class="t-ja">音を消す</span></span></button>
+    </figure>
+  </section>
+
+  <div class="hill" aria-hidden="true"><svg id="hill" preserveAspectRatio="none"></svg></div>
+
+  <section class="feature">
+    <div class="feature-text">
+      <p class="print">01 · drift</p>
+      <h2><span class="t-en">Loops drift apart.<br><span class="b">The drift is the music.</span></span><span class="t-ja">ループが、ずれていく。<br><span class="b">そのずれが、音楽になる。</span></span></h2>
+      <p><span class="t-en">Every voice is a loop of its own length. Unequal loops fall in and out of step, so the same few notes keep turning into something new. Four on the floor, odd meters and beatless ambient are one mechanism.</span><span class="t-ja">音ごとに、ループの長さが違います。長さの違うループは拍が少しずつずれて、同じ数音がいつまでも新しく聞こえます。4 つ打ちも、変拍子も、拍のないアンビエントも、同じ仕組みです。</span></p>
+    </div>
+    <img class="shot" src="lp/drift.jpg" alt="Voices drawn as hills over loops of different lengths" width="660" height="1434" loading="lazy">
+  </section>
+
+  <section class="feature">
+    <div class="feature-text">
+      <p class="print">02 · watch</p>
+      <h2><span class="t-en">Watch the song<br><span class="b">become line art.</span></span><span class="t-ja">曲が、線画になって<br><span class="b">動きだす。</span></span></h2>
+      <p><span class="t-en">Tap ◎ and the song plays as moving line art. Every scene moves with the loops: the sea through a tall window swells when they do.</span><span class="t-ja">◎ を押すと、曲が動く線画になります。どの場面もループに合わせて動き、高い窓の向こうの海も、音と一緒にうねります。</span></p>
+    </div>
+    <img class="shot" src="lp/room.jpg" alt="A tall room drawn in hairlines, the sea moving beyond a window" width="660" height="1434" loading="lazy">
+  </section>
+
+  <section class="feature">
+    <div class="feature-text">
+      <p class="print">03 · voices</p>
+      <h2><span class="t-en">Twenty-two voices.<br><span class="b">Every one synthesized.</span></span><span class="t-ja">22 の音。<br><span class="b">すべて、その場で合成。</span></span></h2>
+      <p><span class="t-en">No samples ship with yawp. Every kick, hat, pad and bell is synthesized as it plays, tuned soft for minimal techno and ambient. The mixer gives each voice a fader; low, mid, high, echo, tide and room shape the whole.</span><span class="t-ja">yawp には録音された音源が入っていません。キックもハットもパッドもベルも、鳴るたびにその場で合成し、ミニマルテクノとアンビエントに合うやわらかい音にしています。ミキサーでは音ごとのフェーダーと、low・mid・high・echo・tide・room で全体を整えます。</span></p>
+    </div>
+    <img class="shot" src="lp/mixer.jpg" alt="The mixer: a fader for every voice and six knobs" width="660" height="1434" loading="lazy">
+  </section>
+
+  <section class="feature">
+    <div class="feature-text">
+      <p class="print">04 · key</p>
+      <h2><span class="t-en">Tune the whole song<br><span class="b">like a string.</span></span><span class="t-ja">曲全体を、<br><span class="b">弦のように調律する。</span></span></h2>
+      <p><span class="t-en">Drag the tuner by the title and every pitched voice follows, live, a semitone at a time.</span><span class="t-ja">タイトルの横のチューナーをドラッグすると、音程のある音がすべて、半音ずつその場でついてきます。</span></p>
+    </div>
+    <img class="shot" src="lp/key.jpg" alt="The tuner: twelve note names under one needle" width="660" height="1434" loading="lazy">
+  </section>
+
+  <section class="feature">
+    <div class="feature-text">
+      <p class="print">05 · night</p>
+      <h2><span class="t-en">Play into the night.<br><span class="b">Same paper, inverted.</span></span><span class="t-ja">夜も、弾ける。<br><span class="b">同じ紙を、反転して。</span></span></h2>
+      <p><span class="t-en">Night mode turns the sheet over: pale ink on dark paper. Lock the screen and the music keeps going.</span><span class="t-ja">夜のモードは、紙を裏返したような淡いインクと暗い紙。画面をロックしても、音楽は鳴りつづけます。</span></p>
+    </div>
+    <img class="shot" src="lp/night.jpg" alt="yawp in night mode: pale lines on dark paper" width="660" height="1434" loading="lazy">
+  </section>
+
+  <section class="sheet">
+    <p class="print">06 · hints</p>
+    <h2><span class="t-en">The whole grammar<br><span class="b">fits on one sheet.</span></span><span class="t-ja">操作のすべてが、<br><span class="b">一枚に収まる。</span></span></h2>
+    <dl class="hints" id="hints"></dl>
+    <p class="print sheet-foot">there is no wrong way to draw a hill</p>
+  </section>
+
+  <section class="sheet">
+    <p class="print">07 · packs</p>
+    <h2><span class="t-en">Free to start.<br><span class="b">Packs when you want more.</span></span><span class="t-ja">無料ではじめて、<br><span class="b">欲しくなったらパックを。</span></span></h2>
+    <dl class="packs" id="packs"></dl>
+    <p class="print sheet-foot"><span class="t-en">one-time purchases · never a subscription</span><span class="t-ja">買い切り · 購読ではありません</span></p>
+  </section>
+
+  <section class="closing">
+    <img src="icon.png" alt="The yawp app icon: one hill with a bead on its crest" width="120" height="120">
+    <p class="closing-name">yawp</p>
+    <p><span class="t-en">loops that drift into music</span><span class="t-ja">ずれていくループが、音楽になる</span></p>
+    <p class="print"><span class="t-en">Coming soon to the App Store · iPhone · iOS 15 or later</span><span class="t-ja">App Store で まもなく公開 · iPhone · iOS 15 以降</span></p>
+  </section>
+</main>
+
+<footer class="foot">
+  <nav><a href="support.html"><span class="t-en">Support</span><span class="t-ja">サポート</span></a><a href="privacy.html"><span class="t-en">Privacy</span><span class="t-ja">プライバシー</span></a><a href="mailto:contact@stems-jp.com">contact@stems-jp.com</a></nav>
+  <span>© 2026 <a href="https://stems-jp.com">Stems</a></span>
+</footer>
+</body>
+</html>
