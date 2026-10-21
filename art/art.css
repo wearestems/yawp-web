@@ -1,0 +1,55 @@
+/* yawp — pictures first. Every word on the page is a short uppercase label; nothing explains. */
+body.art { font-family: var(--mono); font-size: 11px; line-height: 1.6; }
+.art { --m: clamp(18px, 4vw, 56px); }
+.label { margin: 0; font: 500 11px/1.6 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.dim { color: var(--ink-3); }
+.art a { color: inherit; text-decoration: none; }
+
+/* the mast: wordmark left, the store right — printed, never a bar */
+.mast { position: fixed; inset: 0 0 auto 0; z-index: 5; display: flex; justify-content: space-between; align-items: baseline;
+  padding: calc(env(safe-area-inset-top) + var(--m) * 0.6) var(--m) 0; pointer-events: none; mix-blend-mode: difference; color: #e8e3da; }
+.mast a { pointer-events: auto; }
+.mast-name { font-weight: 600; font-size: 15px; letter-spacing: -0.01em; }
+.mast-store { font: 500 11px/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* the score fills the first sheet */
+.fig { position: relative; height: 100svh; min-height: 520px; }
+#score { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.fig-foot { position: absolute; left: var(--m); right: var(--m); bottom: calc(env(safe-area-inset-bottom) + var(--m) * 0.8);
+  display: flex; justify-content: space-between; align-items: baseline; gap: 24px; }
+.listen, .cap-sound { padding: 0; border: 0; background: none; color: inherit; cursor: pointer; }
+.listen[aria-pressed="true"] .dim { color: inherit; }
+
+/* plates: each a sheet of its own; the number and the name bottom-left */
+.plate { position: relative; margin: 0; min-height: 100svh; display: grid; place-items: center; padding: calc(var(--m) * 2.2) var(--m) calc(var(--m) * 2.6); }
+.plate-v { width: min(100%, 1500px, 76svh * 1.6); aspect-ratio: 16 / 10; height: auto; object-fit: cover; opacity: 0; transition: opacity 1.6s ease; }
+.plate.in .plate-v { opacity: 1; }
+/* the video's paper decodes a shade off the page's: match it, and melt the edges so no browser shows a seam */
+.plate-day { background: #e7e3d8; }
+.plate-v { -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent), linear-gradient(transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent), linear-gradient(transparent, #000 8%, #000 92%, transparent); mask-composite: intersect; }
+.plate-night { background: #14140d; color: #e9e4d8; --ink-3: #8d877a; }
+.cap { position: absolute; left: var(--m); bottom: calc(var(--m) * 0.9); }
+.cap .dim { margin-right: 1.6em; }
+.cap-sound { margin-left: 2.4em; color: var(--ink-3); }
+.cap-sound[aria-pressed="true"] { color: inherit; }
+
+/* the film, upright, small on its sheet */
+.film-frame { width: min(46vh, 72vw); aspect-ratio: 9 / 16; }
+.film-frame video { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+
+/* the foot: one line */
+.foot { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 14px 28px;
+  padding: calc(var(--m) * 1.6) var(--m) calc(env(safe-area-inset-bottom) + var(--m)); border-top: 1px solid var(--line); }
+.foot-links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.art a:hover, .listen:hover, .cap-sound:hover { color: var(--ink-3); }
+
+@media (max-width: 640px) {
+  .fig-foot { flex-direction: column; gap: 10px; align-items: flex-start; }
+  .plate { min-height: 0; display: flex; flex-direction: column; align-items: stretch; gap: 18px; padding: calc(var(--m) * 4) var(--m) calc(var(--m) * 2); }
+  .plate-v { width: 100%; aspect-ratio: 430 / 932; }
+  .plate .cap { position: static; }
+  .film-frame { width: 78vw; align-self: center; }
+  .foot { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) { .plate-v { transition: none; opacity: 1; } }
