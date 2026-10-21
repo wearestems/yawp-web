@@ -91,7 +91,8 @@
     audio.play().then(function () { playing = true; word.textContent = '■ Stop'; btn.setAttribute('aria-pressed', 'true'); if (still) requestAnimationFrame(tick); }).catch(stop);
   });
   audio.addEventListener('ended', function () { setTimeout(stop, 1800); });
-  window.addEventListener('resize', function () { fit(); if (still) frame(20); });
+  // refit whenever the sheet's own size changes (iOS settles 100svh after the first layout)
+  new ResizeObserver(function () { fit(); if (still) frame(20); }).observe(cv);
   fit();
   if (document.fonts) document.fonts.ready.then(function () { if (still) frame(20); });
   if (still) frame(20); else requestAnimationFrame(tick);

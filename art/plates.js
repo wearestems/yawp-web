@@ -20,7 +20,8 @@
       '</figcaption>';
     root.appendChild(s);
   });
-  // a plate settles in as it arrives and moves only while it is in view. When the browser refuses to start a
+  // a plate moves only while it is in view (never faded in from nothing: iOS refuses to play a video it
+  // counts as invisible). When the browser refuses to start a
   // muted video on its own (iOS in Low Power Mode), the first tap anywhere starts the ones in view.
   var seen = [], refused = false;
   function go(v) { v.muted = true; var p = v.play(); if (p) p.catch(function () { refused = true; }); }
