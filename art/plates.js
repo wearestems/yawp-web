@@ -15,16 +15,28 @@
     var s = document.createElement('figure');
     s.className = 'plate plate-' + p[1];
     var f = 'art/' + p[0] + '-' + p[1] + (tall ? '-tall' : '');
-    s.innerHTML = '<video class="plate-v" src="' + f + '.mp4" poster="' + f + '.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>' +
-      '<figcaption class="cap label"><span class="dim">0' + (i + 1) + '</span> ' + p[0] +
+    s.innerHTML = '<div class="plate-frame"><video class="plate-v" src="' + f + '.mp4" poster="' + f + '.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div>' +
+      '<figcaption class="cap label"><span class="dim">0' + (i + 1) + '</span> ' + p[0] + (still ? ' <button class="label cap-sound" type="button">→ Play</button>' : '') +
       '</figcaption>';
     root.appendChild(s);
   });
-  // a plate settles in as it arrives and moves only while it is in view
+  // a plate settles in as it arrives and moves only while it is in view. When the browser refuses to start a
+  // muted video on its own (iOS in Low Power Mode), the first tap anywhere starts the ones in view.
+  var seen = [], refused = false;
+  function go(v) { v.muted = true; var p = v.play(); if (p) p.catch(function () { refused = true; }); }
   var io = new IntersectionObserver(function (es) { es.forEach(function (e) {
-    var v = e.target.querySelector('.plate-v');
-    if (e.isIntersecting) { e.target.classList.add('in'); if (v && !still) v.play().catch(function () {}); } else if (v) v.pause();
+    var v = e.target.querySelector('.plate-v'), i = seen.indexOf(v);
+    if (e.isIntersecting) { e.target.classList.add('in'); if (v && !still) { if (i < 0) seen.push(v); go(v); } }
+    else if (v) { v.pause(); if (i >= 0) seen.splice(i, 1); }
   }); }, { threshold: 0.25 });
+  // with Reduce Motion on, a scene holds still until it is asked to move
+  if (still) document.querySelectorAll('.plate .cap-sound').forEach(function (b) {
+    b.addEventListener('click', function () { var v = b.closest('.plate').querySelector('.plate-v');
+      if (v.paused) { go(v); b.textContent = '■ Stop'; } else { v.pause(); b.textContent = '→ Play'; } });
+  });
+  ['pointerdown', 'touchend', 'keydown'].forEach(function (t) {
+    addEventListener(t, function () { if (refused) { refused = false; seen.forEach(go); } }, { passive: true });
+  });
   document.querySelectorAll('.plate').forEach(function (el) { io.observe(el); });
   var film = document.getElementById('film');
   new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) film.play().catch(function () {}); else film.pause(); }); }, { threshold: 0.4 }).observe(film);
