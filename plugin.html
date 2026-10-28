@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="yawp in other apps — yawp" data-ja="ほかのアプリで使う — yawp">yawp in other apps — yawp</title>
+<meta name="description" content="yawp as an AUv3 plugin in AUM, GarageBand, Logic and other hosts, with every voice on its own output.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="96x96" href="/icon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="guide.css">
+<script src="lang.js"></script>
+</head>
+<body>
+<header class="bar">
+  <a class="bar-name" href="./">yawp</a>
+  <div class="bar-right">
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en">EN</button><button type="button" data-l="ja">日本語</button></div>
+  </div>
+</header>
+
+<main class="guide">
+  <img class="mark" src="icon.png" alt="" width="72" height="72">
+  <div class="t-en">
+    <h1>yawp in other apps</h1>
+    <p class="lead">yawp runs as an AUv3 plugin in AUM, GarageBand, Logic and other hosts. Each voice can go to an output of its own, so you can process the kick, the hats or the chords on their own channels.</p>
+    <p>The plugin comes with complete. Buy complete in the yawp app, then open the plugin in your host.</p>
+  </div>
+  <div class="t-ja">
+    <h1>ほかのアプリで使う</h1>
+    <p class="lead">yawp は AUv3 プラグインとして、AUM、GarageBand、Logic などのホストアプリで使えます。楽器ごとに別の出力へ振り分けられるので、キックやハット、コードをそれぞれのチャンネルで加工できます。</p>
+    <p>プラグインは complete で使えます。yawp アプリで complete を購入してから、ホストアプリでプラグインを開いてください。</p>
+  </div>
+
+  <ol class="toc">
+    <li><a href="#load"><span class="n">01</span><span class="t-en">Load yawp in a host</span><span class="t-ja">ホストに読み込む</span></a></li>
+    <li><a href="#outs"><span class="n">02</span><span class="t-en">Send voices to their own outputs</span><span class="t-ja">楽器を出力に振り分ける</span></a></li>
+    <li><a href="#aum"><span class="n">03</span><span class="t-en">In AUM</span><span class="t-ja">AUM での設定</span></a></li>
+    <li><a href="#aim"><span class="n">04</span><span class="t-en">Pads on one voice</span><span class="t-ja">1つの楽器だけにパッドをかける</span></a></li>
+    <li><a href="#notes"><span class="n">05</span><span class="t-en">Good to know</span><span class="t-ja">知っておくとよいこと</span></a></li>
+    <li><a href="guide.html"><span class="n">→</span><span class="t-en">The guide: every gesture</span><span class="t-ja">使い方：すべての操作</span></a></li>
+  </ol>
+
+  <section class="part" id="load">
+    <figure><img src="guide/plugin.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">01</span>
+      <div class="t-en">
+        <h2>Load yawp in a host</h2>
+        <p>yawp shows up in your host’s list of Audio Units under Stems, in two forms:</p>
+        <ul class="how">
+          <li><b>Stems: yawp</b><span>An instrument. It plays yawp’s own sound, and sends only the MIDI lanes out as MIDI.</span></li>
+          <li><b>Stems: yawp MIDI</b><span>A MIDI processor. It makes no sound and sends every loop out as MIDI, for your other synths.</span></li>
+        </ul>
+        <p>Inside the host, yawp follows the host’s tempo and transport, so the host’s play button starts it. You draw on the same sheet as in the app. The host keeps your song with its session.</p>
+      </div>
+      <div class="t-ja">
+        <h2>ホストに読み込む</h2>
+        <p>yawp は、ホストアプリの Audio Unit の一覧で Stems の下に、2つの形で表示されます。</p>
+        <ul class="how">
+          <li><b>Stems: yawp</b><span>楽器です。yawp の音を鳴らします。外に MIDI として送るのは MIDI レーンだけです。</span></li>
+          <li><b>Stems: yawp MIDI</b><span>MIDI プロセッサーです。音は鳴らさず、すべてのループを MIDI として送ります。ほかのシンセを鳴らすときに使います。</span></li>
+        </ul>
+        <p>ホストの中では、テンポと再生・停止はホストに合わせます。ホストの再生ボタンで yawp も動き出します。描く画面はアプリと同じです。曲はホストのセッションと一緒に保存されます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="outs">
+    <div>
+      <figure><img src="guide/plugin-drawer.jpg" alt="" width="786" height="1704" loading="lazy"><figcaption>⋮ → outs</figcaption></figure>
+      <figure><img src="guide/outs.jpg" alt="" width="786" height="1704" loading="lazy"><figcaption>outs</figcaption></figure>
+    </div>
+    <div>
+      <span class="n">02</span>
+      <div class="t-en">
+        <h2>Send voices to their own outputs</h2>
+        <p>Stems: yawp has nine outputs: the mix (<code>yawp</code>) and <code>out 1</code> to <code>out 8</code>. Every voice plays in the mix until you send it somewhere else.</p>
+        <ul class="steps">
+          <li>Open the drawer with ⋮ at the top right and tap <b>outs</b>.</li>
+          <li>Each voice has a row of choices: <code>MIX 1 2 3 4 5 6 7 8</code>. Tap a number to send the voice to that output. It leaves the mix and plays only there.</li>
+          <li>Voices given the same number share that output. For example, give the kick, clap and hats <code>1</code> to have the drums together on one channel.</li>
+          <li><code>ALL TO MIX</code> at the top puts every voice back in the mix.</li>
+        </ul>
+        <p>Each output is named after the voices on it, for example <code>1 kick clap hat</code>, so you can tell them apart in the host.</p>
+      </div>
+      <div class="t-ja">
+        <h2>楽器を出力に振り分ける</h2>
+        <p>Stems: yawp には9つの出力があります。ミックス（<code>yawp</code>）と、<code>out 1</code> から <code>out 8</code> です。振り分けるまでは、すべての楽器がミックスで鳴ります。</p>
+        <ul class="steps">
+          <li>右上の ⋮ でメニューを開き、<b>outs</b> をタップします。</li>
+          <li>楽器ごとに <code>MIX 1 2 3 4 5 6 7 8</code> が並んでいます。番号をタップすると、その楽器はミックスから外れて、その番号の出力だけで鳴ります。</li>
+          <li>同じ番号を選んだ楽器は、同じ出力にまとめて出ます。たとえばキック、クラップ、ハットを <code>1</code> にすると、ドラムを1つのチャンネルにまとめられます。</li>
+          <li>上の <code>ALL TO MIX</code> で、すべての楽器をミックスに戻します。</li>
+        </ul>
+        <p>出力には、振り分けた楽器の名前が付きます（例：<code>1 kick clap hat</code>）。ホスト側で見分けるときの目印になります。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="aum">
+    <div></div>
+    <div>
+      <span class="n">03</span>
+      <div class="t-en">
+        <h2>In AUM</h2>
+        <ul class="steps">
+          <li>Add a channel and load <b>Stems: yawp</b> in its input slot. This channel plays the mix.</li>
+          <li>In yawp, send the voices you want apart to their outputs (step 02 above).</li>
+          <li>Add a new channel for each output you use. In its input slot, choose yawp’s output from the plugin bus list, for example <code>1 kick clap hat</code>.</li>
+          <li>Put effects on each channel as you like. The mix channel keeps every voice you did not send away, plus the echo and room.</li>
+        </ul>
+        <p>If an output still shows as <code>out 1</code> after you change the voices on it, load yawp again in AUM so it reads the new names.</p>
+      </div>
+      <div class="t-ja">
+        <h2>AUM での設定</h2>
+        <ul class="steps">
+          <li>チャンネルを追加し、入力スロットに <b>Stems: yawp</b> を読み込みます。このチャンネルがミックスです。</li>
+          <li>yawp の outs で、分けたい楽器を出力に振り分けます（上の 02）。</li>
+          <li>使う出力の数だけ、新しいチャンネルを追加します。入力スロットの plugin bus の一覧から、yawp の出力を選びます（例：<code>1 kick clap hat</code>）。</li>
+          <li>チャンネルごとに好きなエフェクトをかけられます。ミックスのチャンネルには、振り分けなかった楽器と、エコーと残響が残ります。</li>
+        </ul>
+        <p>振り分けを変えても AUM の一覧で <code>out 1</code> のままになっているときは、AUM で yawp を読み込み直すと新しい名前が表示されます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="aim">
+    <figure><img src="guide/aim.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">04</span>
+      <div class="t-en">
+        <h2>Pads on one voice</h2>
+        <p>The pads freeze, stop, rev and half work inside the plugin as in the app.</p>
+        <ul class="how">
+          <li><b>press a pad</b><span>It plays on the whole song: the mix and every output.</span></li>
+          <li><b>hold a fader, then a pad</b><span>Hold a voice’s fader in the mixer with one hand and press a pad with the other. The pad shows the voice’s name (here <code>1/8 kick</code>) and plays on that voice alone, wherever it is sent.</span></li>
+        </ul>
+        <p>You can hold two faders to play a pad on two voices.</p>
+      </div>
+      <div class="t-ja">
+        <h2>1つの楽器だけにパッドをかける</h2>
+        <p>freeze・stop・rev・half のパッドは、プラグインの中でもアプリと同じように使えます。</p>
+        <ul class="how">
+          <li><b>パッドを押す</b><span>曲全体にかかります。ミックスと、すべての出力にかかります。</span></li>
+          <li><b>フェーダーを押さえてパッド</b><span>片方の手でミキサーの楽器のフェーダーを押さえたまま、もう片方の手でパッドを押します。パッドに楽器の名前が出て（この画面では <code>1/8 kick</code>）、どの出力に振り分けていても、その楽器だけにかかります。</span></li>
+        </ul>
+        <p>フェーダーを2本押さえると、2つの楽器にかけられます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="notes">
+    <div></div>
+    <div>
+      <span class="n">05</span>
+      <div class="t-en">
+        <h2>Good to know</h2>
+        <ul class="how">
+          <li><b>what an output carries</b><span>The voice as the mixer shapes it: its fader, drive, tone and EQ. The LOW, MID and HIGH knobs and the song’s arc reach it too.</span></li>
+          <li><b>echo and room</b><span>A voice on its own output still sends to the echo and the room, and those play in the mix. On its own channel the voice is dry.</span></li>
+          <li><b>the master</b><span>The mix keeps yawp’s glue and limiter. The outputs leave them out, so you can use your host’s.</span></li>
+          <li><b>where the choice is kept</b><span>The outs choice is kept on your device, not with each host session.</span></li>
+          <li><b>chop</b><span>The chop lanes are not in the plugin; their takes stay in the app.</span></li>
+        </ul>
+      </div>
+      <div class="t-ja">
+        <h2>知っておくとよいこと</h2>
+        <ul class="how">
+          <li><b>出力に含まれるもの</b><span>ミキサーで調整した楽器の音です（フェーダー、drive、tone、EQ）。LOW・MID・HIGH のつまみと、曲の ARC もかかります。</span></li>
+          <li><b>エコーと残響</b><span>出力に振り分けた楽器も、エコーと残響には送られていて、それはミックス側で鳴ります。振り分けた先のチャンネルでは、楽器の音は残響なしで鳴ります。</span></li>
+          <li><b>マスター</b><span>ミックスには yawp のコンプレッサーとリミッターがかかります。振り分けた出力にはかからないので、ホスト側のものを使えます。</span></li>
+          <li><b>振り分けの保存</b><span>outs の振り分けは、ホストのセッションごとではなく、端末に保存されます。</span></li>
+          <li><b>chop</b><span>chop のレーンはプラグインでは使えません。録った音はアプリの中にあります。</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <nav><a href="./">yawp</a><a href="guide.html"><span class="t-en">Guide</span><span class="t-ja">使い方</span></a><a href="plugin.html"><span class="t-en">Plugin</span><span class="t-ja">プラグイン</span></a><a href="support.html"><span class="t-en">Support</span><span class="t-ja">サポート</span></a><a href="privacy.html"><span class="t-en">Privacy</span><span class="t-ja">プライバシー</span></a></nav>
+  <span>© 2026 <a href="https://stems-jp.com">Stems</a></span>
+</footer>
+</body>
+</html>

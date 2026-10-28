@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-en="Guide — yawp" data-ja="使い方 — yawp">Guide — yawp</title>
+<meta name="description" content="How to play yawp: every gesture, with the screen it belongs to.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="96x96" href="/icon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="guide.css">
+<script src="lang.js"></script>
+</head>
+<body>
+<header class="bar">
+  <a class="bar-name" href="./">yawp</a>
+  <div class="bar-right">
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en">EN</button><button type="button" data-l="ja">日本語</button></div>
+  </div>
+</header>
+
+<main class="guide">
+  <img class="mark" src="icon.png" alt="" width="72" height="72">
+  <div class="t-en">
+    <h1>Guide</h1>
+    <p class="lead">Every gesture in yawp, with the screen it belongs to. The same lines are in the app under ⋮ → hints.</p>
+    <p>Each voice is a loop with a line under it. You draw on the line, and the height of what you draw decides how many steps play and how hard. Loops of different lengths slip against each other, so the pattern keeps changing while you play.</p>
+  </div>
+  <div class="t-ja">
+    <h1>使い方</h1>
+    <p class="lead">yawp の操作を、その画面と一緒にまとめました。同じ内容は、アプリの ⋮ → hints でも読めます。</p>
+    <p>楽器はそれぞれ一本のループで、下に線が引かれています。線の上に指で描くと、描いた高さに応じて、鳴るステップの数と強さが決まります。長さの違うループは少しずつずれていくので、演奏している間もパターンが変わり続けます。</p>
+  </div>
+
+  <ol class="toc">
+    <li><a href="#draw"><span class="n">01</span><span class="t-en">Draw a loop</span><span class="t-ja">ループを描く</span></a></li>
+    <li><a href="#play"><span class="n">02</span><span class="t-en">Play: the deck</span><span class="t-ja">演奏する：下のバー</span></a></li>
+    <li><a href="#fold"><span class="n">03</span><span class="t-en">Move around the sheet</span><span class="t-ja">シートを移動する</span></a></li>
+    <li><a href="#key"><span class="n">04</span><span class="t-en">Key and scale</span><span class="t-ja">キーとスケール</span></a></li>
+    <li><a href="#mix"><span class="n">05</span><span class="t-en">The mixer and the pads</span><span class="t-ja">ミキサーとパッド</span></a></li>
+    <li><a href="#song"><span class="n">06</span><span class="t-en">The song: arc and chords</span><span class="t-ja">曲のカーブ：ARC と CHORDS</span></a></li>
+    <li><a href="#close"><span class="n">07</span><span class="t-en">A voice up close</span><span class="t-ja">楽器を大きく開く</span></a></li>
+    <li><a href="#notes"><span class="n">08</span><span class="t-en">NOTES</span><span class="t-ja">NOTES</span></a></li>
+    <li><a href="#sound"><span class="n">09</span><span class="t-en">SOUND</span><span class="t-ja">SOUND</span></a></li>
+    <li><a href="#wave"><span class="n">10</span><span class="t-en">WAVE</span><span class="t-ja">WAVE</span></a></li>
+    <li><a href="#env"><span class="n">11</span><span class="t-en">ENV and LFO</span><span class="t-ja">ENV と LFO</span></a></li>
+    <li><a href="#chop"><span class="n">12</span><span class="t-en">The chop: your own sampler</span><span class="t-ja">chop：自分の音のサンプラー</span></a></li>
+    <li><a href="#midi"><span class="n">13</span><span class="t-en">MIDI lanes and Ableton Link</span><span class="t-ja">MIDI レーンと Ableton Link</span></a></li>
+    <li><a href="#keep"><span class="n">14</span><span class="t-en">Keep, record, share</span><span class="t-ja">保存・録音・書き出し</span></a></li>
+    <li><a href="#drawer"><span class="n">15</span><span class="t-en">The drawer</span><span class="t-ja">メニュー（⋮）</span></a></li>
+    <li><a href="#scenes"><span class="n">16</span><span class="t-en">Scenes</span><span class="t-ja">シーン</span></a></li>
+    <li><a href="plugin.html"><span class="n">→</span><span class="t-en">yawp in other apps (AUv3, outputs)</span><span class="t-ja">ほかのアプリで使う（AUv3・出力の振り分け）</span></a></li>
+  </ol>
+
+  <section class="part" id="draw">
+    <figure><img src="guide/draw.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">01</span>
+      <div class="t-en">
+        <h2>Draw a loop</h2>
+        <ul class="how">
+          <li><b>draw on a loop</b><span>The higher the hill, the more steps play and the harder they hit. Redraw it any time.</span></li>
+          <li><b>tap a step</b><span>Pin it, so it always plays. Tap again to silence it, and once more to hand it back to the hill.</span></li>
+          <li><b>drag the end tick</b><span>Changes the loop’s length. Loops of different lengths slip against each other.</span></li>
+          <li><b>tap a name</b><span>Mutes the voice. Hold the name for about half a second to solo it.</span></li>
+          <li><b>the small print</b><span>Under each name, for example <code>16 ·16th</code>. Tap it to choose where notes may land: every 16th, 8th or quarter.</span></li>
+        </ul>
+        <p>On glitch, chop and arp the height also picks what plays: glitch’s four sounds, the chop’s slices, and how far the arp climbs.</p>
+      </div>
+      <div class="t-ja">
+        <h2>ループを描く</h2>
+        <ul class="how">
+          <li><b>ループの上に描く</b><span>丘が高いほど、鳴るステップが増えて、強く鳴ります。何度でも描き直せます。</span></li>
+          <li><b>音の点をタップ</b><span>タップするたびに「固定（必ず鳴る）」→「鳴らさない」→「丘に戻す」と切り替わります。</span></li>
+          <li><b>右端の縦線をドラッグ</b><span>ループの長さが変わります。長さの違うループは、少しずつずれていきます。</span></li>
+          <li><b>名前をタップ</b><span>ミュートします。名前を0.5秒ほど長押しするとソロになります。</span></li>
+          <li><b>名前の下の小さな文字</b><span>たとえば <code>16 ·16th</code>。タップすると、音を置ける間隔が 16分・8分・4分 と切り替わります。</span></li>
+        </ul>
+        <p>glitch・chop・arp では、高さで鳴る音も変わります。glitch は4種類の音、chop はスライス、arp は上る段の数です。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="play">
+    <figure><img src="guide/draw.jpg" alt="" width="786" height="1704" loading="lazy" style="object-fit: cover; object-position: bottom; aspect-ratio: 786 / 300"></figure>
+    <div>
+      <span class="n">02</span>
+      <div class="t-en">
+        <h2>Play: the deck</h2>
+        <ul class="how">
+          <li><b>120 BPM</b><span>Drag the number up or down to change the tempo. TAP sets it by tapping.</span></li>
+          <li><b>the die</b><span>Deals a new piece on every throw. Your mutes stay as they are. Now and then it deals a break: funk under 110 BPM, broken beat up to 145, jungle above that.</span></li>
+          <li><b>‹ FOUR ›</b><span>At the top. The presets Four, Seven and Haze change the rhythms of the voices you have on the sheet.</span></li>
+          <li><b>●</b><span>The large button at the right starts and stops the music.</span></li>
+        </ul>
+      </div>
+      <div class="t-ja">
+        <h2>演奏する：下のバー</h2>
+        <ul class="how">
+          <li><b>120 BPM</b><span>数字を上下にドラッグするとテンポが変わります。TAP は、タップした速さに合わせます。</span></li>
+          <li><b>サイコロ</b><span>振るたびに、新しい曲の展開を配ります。ミュートはそのままです。ときどきブレイクビーツを配ります（110 BPM 未満はファンク、145 まではブロークンビーツ、それより速いとジャングル）。</span></li>
+          <li><b>‹ FOUR ›</b><span>画面の上にあります。プリセットの Four・Seven・Haze で、今シートにいる楽器のリズムを入れ替えます。</span></li>
+          <li><b>●</b><span>右の大きなボタンで、再生と停止を切り替えます。</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="fold">
+    <figure><img src="guide/fold.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">03</span>
+      <div class="t-en">
+        <h2>Move around the sheet</h2>
+        <ul class="how">
+          <li><b>two fingers</b><span>Scroll the rows. You can also drag the names on the left.</span></li>
+          <li><b>the right edge</b><span>Each voice’s icon. Touch one to bring that voice’s row up.</span></li>
+          <li><b>the four corners</b><span>At the top of the right edge. Folds every loop onto one screen, so you can see which voice plays where. Tap a loop to open the sheet onto it.</span></li>
+          <li><b>+ voice</b><span>Under the last row. Calls another voice onto the sheet.</span></li>
+        </ul>
+      </div>
+      <div class="t-ja">
+        <h2>シートを移動する</h2>
+        <ul class="how">
+          <li><b>二本指</b><span>列をスクロールします。左の名前をドラッグしても動かせます。</span></li>
+          <li><b>右端のアイコン</b><span>楽器ごとのアイコンです。触れると、その楽器の列へ移動します。</span></li>
+          <li><b>四隅のマーク</b><span>右端のいちばん上にあります。全部のループを一画面に畳み、どの楽器がどこで鳴っているかを見渡せます。ループをタップすると、その楽器の位置で元に戻ります。</span></li>
+          <li><b>+ voice</b><span>いちばん下の列の下にあります。ほかの楽器をシートに呼びます。</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="key">
+    <figure><img src="guide/key.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">04</span>
+      <div class="t-en">
+        <h2>Key and scale</h2>
+        <ul class="how">
+          <li><b>key A by the title</b><span>Opens the tuner. Drag the tape sideways and the whole song moves to the new key.</span></li>
+          <li><b>the words under it</b><span>Choose the scale: minor, dorian, phrygian, major, mixolydian, harmonic, pentatonic, in.</span></li>
+        </ul>
+      </div>
+      <div class="t-ja">
+        <h2>キーとスケール</h2>
+        <ul class="how">
+          <li><b>タイトル横の key A</b><span>チューナーが開きます。テープを左右にドラッグすると、曲全体のキーが変わります。</span></li>
+          <li><b>その下の言葉</b><span>スケールを選びます。minor・dorian・phrygian・major・mixolydian・harmonic・pentatonic・in から選べます。</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="mix">
+    <figure><img src="guide/mix.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">05</span>
+      <div class="t-en">
+        <h2>The mixer and the pads</h2>
+        <ul class="how">
+          <li><b>M</b><span>The glyph next to the die. Opens the mixer.</span></li>
+          <li><b>faders</b><span>One per voice. Tap the icon under a fader to mute, hold it to solo. A double tap brings a fader or a knob back to the middle.</span></li>
+          <li><b>knobs</b><span>LOW, MID and HIGH shape the whole song. ECHO and ROOM set how much echo and room you hear. TIDE lets each voice swell and fade slowly on its own.</span></li>
+          <li><b>freeze · stop · rev · half</b><span>Work while you hold them. freeze repeats what it caught (slide your finger up for finer repeats), stop slows the tape to a halt, rev plays backwards, half drops an octave. Two can be held together.</span></li>
+          <li><b>one voice only</b><span>Hold a voice’s fader or icon with one hand and press a pad with the other. The pad shows the voice’s name and plays on that voice alone.</span></li>
+        </ul>
+        <p class="needs">The pads come with complete.</p>
+      </div>
+      <div class="t-ja">
+        <h2>ミキサーとパッド</h2>
+        <ul class="how">
+          <li><b>M</b><span>サイコロの隣のマークです。ミキサーが開きます。</span></li>
+          <li><b>フェーダー</b><span>楽器ごとの音量です。フェーダーの下のアイコンをタップするとミュート、長押しするとソロになります。フェーダーやつまみはダブルタップで真ん中に戻ります。</span></li>
+          <li><b>つまみ</b><span>LOW・MID・HIGH は曲全体の音色です。ECHO と ROOM はエコーと残響の量です。TIDE を上げると、楽器ごとに音量がゆっくり満ち引きします。</span></li>
+          <li><b>freeze · stop · rev · half</b><span>押している間だけかかります。freeze は押した瞬間の音をくり返します（指を上にずらすと細かくなります）。stop はテープが止まるように減速し、rev は逆再生、half は1オクターブ下がります。2つ同時にかけられます。</span></li>
+          <li><b>1つの楽器だけに</b><span>片方の手で楽器のフェーダーかアイコンを押さえたまま、もう片方の手でパッドを押します。パッドにその楽器の名前が出て、その楽器だけにかかります。</span></li>
+        </ul>
+        <p class="needs">パッドは complete で使えます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="song">
+    <figure><img src="guide/song.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">06</span>
+      <div class="t-en">
+        <h2>The song: arc and chords</h2>
+        <ul class="how">
+          <li><b>the glyph right of M</b><span>Opens the song’s curves, over 8, 16 or 32 bars (tap “16 bars” to change it).</span></li>
+          <li><b>ARC</b><span>Draw above the dotted middle and every hill grows. Draw below it and the loops thin out and darken. Use it to draw a build or a breakdown.</span></li>
+          <li><b>CHORDS</b><span>Draw steps, one chord per bar. Every voice with notes follows the chord.</span></li>
+        </ul>
+        <p class="needs">The song’s curves come with complete.</p>
+      </div>
+      <div class="t-ja">
+        <h2>曲のカーブ：ARC と CHORDS</h2>
+        <ul class="how">
+          <li><b>M の右のマーク</b><span>曲のカーブが開きます。長さは 8・16・32 小節で、「16 bars」をタップすると切り替わります。</span></li>
+          <li><b>ARC</b><span>点線より上に描くと、すべての丘が大きくなります。下に描くと、ループが薄く、暗くなります。盛り上がりやブレイクを描けます。</span></li>
+          <li><b>CHORDS</b><span>小節ごとに階段を描いて、コードを選びます。音程のある楽器はすべてそのコードに合わせます。</span></li>
+        </ul>
+        <p class="needs">曲のカーブは complete で使えます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="close">
+    <figure><img src="guide/close.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">07</span>
+      <div class="t-en">
+        <h2>A voice up close</h2>
+        <ul class="how">
+          <li><b>tap a voice’s mark</b><span>The small icon above its name. The voice opens, with its faces side by side: LINE, NOTES, SOUND, WAVE, ENV, LFO. Each shows a small picture of itself.</span></li>
+          <li><b>tap a face</b><span>It opens to the whole screen. The names along the bottom move to the other faces. The voice’s name at the top leads back.</span></li>
+          <li><b>‹ felt ›</b><span>The voice’s presets. ‹ › steps through them. Tap the name to see all of them side by side, each with a picture of its sound. <code>+ keep this sound</code> saves your own.</span></li>
+          <li><b>the right edge</b><span>Touch another voice’s icon to open that voice instead.</span></li>
+        </ul>
+      </div>
+      <div class="t-ja">
+        <h2>楽器を大きく開く</h2>
+        <ul class="how">
+          <li><b>楽器のマークをタップ</b><span>名前の上の小さなアイコンです。楽器が大きく開き、LINE・NOTES・SOUND・WAVE・ENV・LFO の面が小さな絵で並びます。</span></li>
+          <li><b>面をタップ</b><span>その面が画面いっぱいに開きます。下の名前でほかの面へ移り、上の楽器名で戻ります。</span></li>
+          <li><b>‹ felt ›</b><span>楽器のプリセットです。‹ › で切り替えます。名前をタップすると全部が並び、それぞれの音が小さな絵で見られます。<code>+ keep this sound</code> で自分のプリセットとして保存します。</span></li>
+          <li><b>右端のアイコン</b><span>ほかの楽器のアイコンに触れると、その楽器に切り替わります。</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="notes">
+    <figure><img src="guide/notes.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">08</span>
+      <div class="t-en">
+        <h2>NOTES</h2>
+        <ul class="how">
+          <li><b>touch a column</b><span>Each line is a note of the scale. Touch or sweep a column and its step takes the nearest note. A double tap gives the step back its own note.</span></li>
+          <li><b>glide ↔</b><span>Drag it sideways and each note slides in from the one before.</span></li>
+          <li><b>↓ remove</b><span>Pull a note down past the lowest line to take it out. A sweep along there takes out every note it crosses.</span></li>
+        </ul>
+        <p>On LINE you can carry a dot along the loop, or under the line to take it out.</p>
+      </div>
+      <div class="t-ja">
+        <h2>NOTES</h2>
+        <ul class="how">
+          <li><b>列に触れる</b><span>横線はスケールの音です。列に触れるか、なぞると、そのステップがいちばん近い音になります。ダブルタップで元の音に戻ります。</span></li>
+          <li><b>glide ↔</b><span>横にドラッグすると、前の音から滑り込むようになります。</span></li>
+          <li><b>↓ remove</b><span>音をいちばん下の線より下まで引き下ろすと消えます。そこをなぞると、通った音がまとめて消えます。</span></li>
+        </ul>
+        <p>LINE の面では、点をつかんで横に動かせます。線の下まで引き下ろして離すと消えます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="sound">
+    <figure><img src="guide/sound.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">09</span>
+      <div class="t-en">
+        <h2>SOUND</h2>
+        <p>One hit of the voice, drawn as its shape through time above its spectrum through time. You change the sound by moving the picture.</p>
+        <ul class="how">
+          <li><b>pull the tail</b><span>decay: how long it rings.</span></li>
+          <li><b>press the body up</b><span>drive: how hard it is pushed.</span></li>
+          <li><b>slide the ▲</b><span>tune.</span></li>
+          <li><b>a curtain from either edge</b><span>tone: from the right it gets darker, from the left thinner.</span></li>
+          <li><b>lift or press the front line</b><span>EQ: raise or lower that part of the spectrum.</span></li>
+          <li><b>soft · echo · room · shimmer</b><span>Along the bottom. Tap to switch. soft steps to open and bright on the synths; shimmer adds a bright room that climbs an octave each time round.</span></li>
+        </ul>
+        <p>A double tap sends any of them back home.</p>
+      </div>
+      <div class="t-ja">
+        <h2>SOUND</h2>
+        <p>楽器を一回鳴らした音の形と、時間とともに変わるスペクトルを重ねて描いています。絵を動かすと、音が変わります。</p>
+        <ul class="how">
+          <li><b>尻尾を引く</b><span>decay：鳴っている長さ。</span></li>
+          <li><b>胴を押し上げる</b><span>drive：音の歪み。</span></li>
+          <li><b>▲ を滑らせる</b><span>tune：音の高さ。</span></li>
+          <li><b>両端から幕を引く</b><span>tone：右から引くと暗く、左から引くと細くなります。</span></li>
+          <li><b>手前の線を上下する</b><span>EQ：スペクトルのその部分を持ち上げたり、下げたりします。</span></li>
+          <li><b>soft · echo · room · shimmer</b><span>いちばん下にあります。タップで切り替えます。シンセでは soft が open・bright と明るくなります。shimmer は、回るたびに1オクターブ上がる明るい残響を加えます。</span></li>
+        </ul>
+        <p>どれもダブルタップで元に戻ります。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="wave">
+    <figure><img src="guide/wave.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">10</span>
+      <div class="t-en">
+        <h2>WAVE</h2>
+        <ul class="how">
+          <li><b>A · B</b><span>Tap A or B, then choose a shape from the shelf below.</span></li>
+          <li><b>the bead between them</b><span>MORPH: slide it to blend A into B.</span></li>
+          <li><b>DETUNE</b><span>How far apart the voice’s pair of oscillators sits.</span></li>
+          <li><b>draw on the cycle</b><span>The wave you draw becomes the voice’s own.</span></li>
+        </ul>
+        <p>WAVE is on the synths: sub, syn, keys, organ, bell, chord, pad, smear, glint, arp and drone.</p>
+      </div>
+      <div class="t-ja">
+        <h2>WAVE</h2>
+        <ul class="how">
+          <li><b>A · B</b><span>A か B をタップしてから、下の棚から形を選びます。</span></li>
+          <li><b>間の玉</b><span>MORPH：動かすと、A から B へ混ざっていきます。</span></li>
+          <li><b>DETUNE</b><span>2つの発振器の音程の開き具合です。</span></li>
+          <li><b>波形をなぞる</b><span>なぞった形が、その楽器の波形になります。</span></li>
+        </ul>
+        <p>WAVE はシンセの楽器にあります（sub・syn・keys・organ・bell・chord・pad・smear・glint・arp・drone）。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="env">
+    <div>
+      <figure><img src="guide/env.jpg" alt="" width="786" height="1704" loading="lazy"><figcaption>ENV</figcaption></figure>
+      <figure><img src="guide/lfo.jpg" alt="" width="786" height="1704" loading="lazy"><figcaption>LFO</figcaption></figure>
+    </div>
+    <div>
+      <span class="n">11</span>
+      <div class="t-en">
+        <h2>ENV and LFO</h2>
+        <ul class="how">
+          <li><b>ENV</b><span>The loudness of each note through time. Take hold of its corners: the peak (attack), the knee (decay; up or down for sustain), the gate (its length in steps) and the tail (release).</span></li>
+          <li><b>LFO</b><span>A slow movement on the song’s beat. Drag the wave sideways for its speed and up for how far it swings. Choose its shape, and what it moves: pitch, filter, level or pan.</span></li>
+        </ul>
+        <p>A double tap lets either go. Until you touch them, the voice sounds as it is tuned.</p>
+      </div>
+      <div class="t-ja">
+        <h2>ENV と LFO</h2>
+        <ul class="how">
+          <li><b>ENV</b><span>1音ごとの音量の形です。角をつかんで動かします。頂点がアタック、膝がディケイ（上下でサステイン）、区切りが長さ（ステップ数）、尻尾がリリースです。</span></li>
+          <li><b>LFO</b><span>曲の拍に合わせた、ゆっくりした揺れです。波を横にドラッグすると速さ、上にドラッグすると揺れの深さが変わります。形と、何を揺らすか（音程・フィルター・音量・定位）を選びます。</span></li>
+        </ul>
+        <p>どちらもダブルタップで解除できます。触れるまでは、楽器は元の設定で鳴ります。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="chop">
+    <figure><img src="guide/chop.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">12</span>
+      <div class="t-en">
+        <h2>The chop: your own sampler</h2>
+        <ul class="how">
+          <li><b>tap a chop lane</b><span>Opens the sampler. Press ● to start recording and press it again to stop, up to ten seconds. You can also choose one of your sounds, or a file.</span></li>
+          <li><b>the cut lines</b><span>The take is cut into slices. Drag a line to move a cut. Tap a numbered pad to hear that slice.</span></li>
+          <li><b>→ under a pad</b><span>Turns that slice backwards.</span></li>
+          <li><b>slices 1–8</b><span>How many slices the take holds.</span></li>
+        </ul>
+        <p>The height you draw on the chop lane picks which slice plays. There are three chop lanes; call the second and third from voices in the drawer.</p>
+      </div>
+      <div class="t-ja">
+        <h2>chop：自分の音のサンプラー</h2>
+        <ul class="how">
+          <li><b>chop のレーンをタップ</b><span>サンプラーが開きます。● を押すと録音が始まり、もう一度押すと止まります（最大10秒）。保存した音やファイルを選ぶこともできます。</span></li>
+          <li><b>切れ目の線</b><span>録った音はスライスに切り分けられます。線をドラッグすると切れ目が動きます。番号のパッドをタップすると、そのスライスを試聴できます。</span></li>
+          <li><b>パッドの下の →</b><span>そのスライスを逆再生にします。</span></li>
+          <li><b>slices 1–8</b><span>いくつに切り分けるかを選びます。</span></li>
+        </ul>
+        <p>chop のレーンに描いた高さで、どのスライスが鳴るかが決まります。chop のレーンは3本あり、2本目と3本目はメニューの voices から呼べます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="midi">
+    <figure class="wide"><img src="guide/midi.jpg" alt="" width="786" height="759" loading="lazy"></figure>
+    <div>
+      <span class="n">13</span>
+      <div class="t-en">
+        <h2>MIDI lanes and Ableton Link</h2>
+        <ul class="how">
+          <li><b>⋮ → midi</b><span>What yawp hears (keyboards, controllers, other apps) and where it sends MIDI. Each port switches on and off with a tap.</span></li>
+          <li><b>MIDI lanes</b><span>Four extra loops that play your other synths and drum machines. Set each one’s channel, NOTE or DRUM, and its octave or drum note. yawp’s own voices are not sent out.</span></li>
+          <li><b>Ableton Link</b><span>At the end of the same sheet. Plays in time with other apps and devices on the same Wi-Fi.</span></li>
+        </ul>
+        <p>A MIDI controller can play yawp: its knobs turn the mixer’s knobs, its pads mute voices and open kept sets, and its keys set the key.</p>
+      </div>
+      <div class="t-ja">
+        <h2>MIDI レーンと Ableton Link</h2>
+        <ul class="how">
+          <li><b>⋮ → midi</b><span>yawp が受ける MIDI（キーボード、コントローラー、ほかのアプリ）と、送る先を設定します。それぞれタップでオンとオフを切り替えます。</span></li>
+          <li><b>MIDI レーン</b><span>外部のシンセやドラムマシンを鳴らすための、4本のループです。チャンネル、NOTE か DRUM、オクターブかドラムの音番号を、それぞれ設定します。yawp の楽器の音は外に送りません。</span></li>
+          <li><b>Ableton Link</b><span>同じ画面のいちばん下にあります。同じ Wi-Fi にあるほかのアプリや機材と、テンポと小節を合わせて演奏できます。</span></li>
+        </ul>
+        <p>MIDI コントローラーで yawp を演奏することもできます。つまみでミキサーのつまみ、パッドで楽器のミュートや保存したセット、鍵盤でキーを操作します。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="keep">
+    <figure><img src="guide/sets.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">14</span>
+      <div class="t-en">
+        <h2>Keep, record, share</h2>
+        <ul class="how">
+          <li><b>⋮ → sets</b><span><code>save as new set</code> keeps the whole song: the voices, every curve, the mix, the key and the tempo. Tap a set to open it. <code>update</code> writes your changes over the open set.</span></li>
+          <li><b>⋯ on a set</b><span>rename, share or delete. Share renders 32 bars as the stereo mix, a WAV for each voice, and one MIDI file, so they line up in a DAW. Choose any of the three.</span></li>
+          <li><b>⋮ → ● rec</b><span>Records what you play, up to ten minutes. The take is kept under sets, where you can play or share it.</span></li>
+          <li><b>↶ ↷</b><span>At the top right. Take back any change, or bring it back.</span></li>
+        </ul>
+      </div>
+      <div class="t-ja">
+        <h2>保存・録音・書き出し</h2>
+        <ul class="how">
+          <li><b>⋮ → sets</b><span><code>save as new set</code> で曲全体を保存します（楽器、すべてのカーブ、ミックス、キー、テンポ）。セットをタップすると開きます。<code>update</code> で、開いているセットに変更を上書きします。</span></li>
+          <li><b>セットの ⋯</b><span>名前の変更、共有、削除ができます。共有では32小節を、ステレオのミックス、楽器ごとの WAV、MIDI ファイル1つに書き出します。DAW に並べると位置がそろいます。3つのうち必要なものを選べます。</span></li>
+          <li><b>⋮ → ● rec</b><span>演奏を最大10分録音します。録った演奏は sets に残り、そこで再生や共有ができます。</span></li>
+          <li><b>↶ ↷</b><span>右上にあります。どの操作も、元に戻したりやり直したりできます。</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="drawer">
+    <figure><img src="guide/drawer.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">15</span>
+      <div class="t-en">
+        <h2>The drawer</h2>
+        <ul class="how">
+          <li><b>● rec</b><span>Record what you play.</span></li>
+          <li><b>blank</b><span>Clears the sheet. A preset brings a band back.</span></li>
+          <li><b>voices</b><span>Every voice you own. Tap one to rest it or call it back.</span></li>
+          <li><b>midi</b><span>Ports, MIDI lanes and Ableton Link.</span></li>
+          <li><b>store</b><span>The packs and complete. Tap ▶ to hear a pack first.</span></li>
+          <li><b>sets</b><span>Kept songs and takes.</span></li>
+          <li><b>hints</b><span>Every gesture on one sheet, and the tour.</span></li>
+          <li><b>night</b><span>The same sheet, inverted.</span></li>
+          <li><b>scenes</b><span>The song as moving line art.</span></li>
+        </ul>
+      </div>
+      <div class="t-ja">
+        <h2>メニュー（⋮）</h2>
+        <ul class="how">
+          <li><b>● rec</b><span>演奏を録音します。</span></li>
+          <li><b>blank</b><span>シートを空にします。プリセットを選ぶと楽器が戻ります。</span></li>
+          <li><b>voices</b><span>持っているすべての楽器です。タップで休ませたり、呼び戻したりします。</span></li>
+          <li><b>midi</b><span>MIDI の入出力、MIDI レーン、Ableton Link です。</span></li>
+          <li><b>store</b><span>パックと complete です。▶ で先に音を聴けます。</span></li>
+          <li><b>sets</b><span>保存した曲と、録音した演奏です。</span></li>
+          <li><b>hints</b><span>すべての操作の一覧と、ツアーです。</span></li>
+          <li><b>night</b><span>同じシートを反転した、夜の表示です。</span></li>
+          <li><b>scenes</b><span>曲に合わせて動く線画です。</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="part" id="scenes">
+    <figure><img src="guide/scenes.jpg" alt="" width="786" height="1704" loading="lazy"></figure>
+    <div>
+      <span class="n">16</span>
+      <div class="t-en">
+        <h2>Scenes</h2>
+        <p>Seven scenes of line art that move with the song: land, figure, mycelium, pond, cell, passage and room. Swipe sideways, or tap the scene’s name at the bottom, for the next one. Hold the name to choose from the list. The scenes are for watching; touching them changes nothing.</p>
+        <p class="needs">passage and room come with the windows pack.</p>
+      </div>
+      <div class="t-ja">
+        <h2>シーン</h2>
+        <p>曲に合わせて動く7つの線画です（land・figure・mycelium・pond・cell・passage・room）。左右にスワイプするか、下のシーン名をタップすると次のシーンへ移ります。名前を長押しすると一覧から選べます。シーンは眺めるためのもので、触れても変化しません。</p>
+        <p class="needs">passage と room は windows パックで使えます。</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <nav><a href="./">yawp</a><a href="guide.html"><span class="t-en">Guide</span><span class="t-ja">使い方</span></a><a href="plugin.html"><span class="t-en">Plugin</span><span class="t-ja">プラグイン</span></a><a href="support.html"><span class="t-en">Support</span><span class="t-ja">サポート</span></a><a href="privacy.html"><span class="t-en">Privacy</span><span class="t-ja">プライバシー</span></a></nav>
+  <span>© 2026 <a href="https://stems-jp.com">Stems</a></span>
+</footer>
+</body>
+</html>
